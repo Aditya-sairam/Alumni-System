@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>class</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style>
+	.content {
+  		max-width: 700px;
+  		font-size: 25px;
+
+  		margin: auto;
+  		background: white;
+  		padding: 30px;
+  		/*background-image: url("https://i.pinimg.com/originals/73/9e/96/739e96f0224947668029d10ee4fa07ae.jpg");*/
+  		font-family: 'Yeon Sung'; 
+}
+.text{
+	font-family: 'Lobster', ;
+
+}
+.color{
+	color: green;
+}
+.color1{
+	color : red; 
+}
+
+</style>
+
+</head>
+<body class="content">
+	<h1 class="text">Sessions Being Organised!</h1>
+	{% for objects in qs %}
+	<ul>
+		{% if objects.booked == True %}
+		<li><a href="{{ objects.get_absolute_url }}">{{ objects.session_name }}-<font color="red">Session Booked</font></a></li>
+		{% else %}
+		<li><a href = "{{ objects.get_absolute_url }}">{{ objects.session_name }} - <font color="green">Session Available</font></a></li>
+		{% endif %}
+	</ul>
+	{% endfor %}
+</body>
+</html>

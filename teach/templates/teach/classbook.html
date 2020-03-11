@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Booked Slots</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+	<form method="POST" action=''>{% csrf_token %}
+		<h3>Are you sure you want to book this slot?</h3> 
+		<button class=" btn btn-success">Book Slot</button> 
+		{% if messages %}
+			<ul class="messages">
+    		{% for message in messages %}
+    			<li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+    		{% endfor %}
+			</ul>
+		{% endif %}
+	</form>
+	<script type="text/javascript">
+		function myfunc(){
+			var foo = document.getElementById('inc').innerHTML
+			 foo++;
+			document.getElementById('inc').innerHTML = foo;
+		} 
+	</script>
+</body>
+</html>

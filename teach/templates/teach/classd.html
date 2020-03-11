@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Krona+One&display=swap" rel="stylesheet">
+
+	<title>Details</title>
+	<style>
+		.content {
+  		max-width: 700px;
+
+  		margin: auto;
+  		background: white;
+  		padding: 30px;
+  		background-image: url("https://i.pinimg.com/originals/73/9e/96/739e96f0224947668029d10ee4fa07ae.jpg");
+  		font-family: 'Yeon Sung'; 
+}
+  		.back{
+  			background-image: url("https://wallpapercave.com/wp/DM0NaOX.jpg") 
+  		}
+  		.text{
+  			font-family: 'Krona One', ;
+
+
+  		}
+</style>
+</head>
+<body class="back">
+	<div class="content">
+	<h1><b>{{ obj.session_name }}</b></h1>
+
+	<h1><u></u>What is the Session all about!</h1>
+	<p>{{ obj.session_content }}</p>
+
+	<h1><u>Who will be attending!?</u></h1>
+	<p>{{ obj.audience }}</p>
+
+	<h1><u>Tentative Date</u></h1>
+	<p>{{ obj.session_date }}</p>
+
+	<h3>Are you Intrested?</h3>
+	{% if obj.booked == True %}
+		<h6><font color="red">Sorry!The Session has already been booked!</font></h6> 
+	{% else %}
+		<a  href="{{ obj.get_booked_url }}" class="btn btn-primary">Book Slot!</button>
+	{% endif %}
+	{% if request.user.is_authenticated %}
+		<h1>You are logged in</h1>
+	{% endif %}
+
+</div>
+
+
+
+</body>
+</html>

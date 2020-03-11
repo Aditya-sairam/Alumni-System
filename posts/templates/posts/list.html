@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ListView</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Krona+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+</head>
+<style>
+	.content {
+  		max-width: 700px;
+
+  		margin: auto;
+  		background: white;
+  		padding: 30px;
+  		background-image: url("https://i.pinimg.com/originals/73/9e/96/739e96f0224947668029d10ee4fa07ae.jpg");
+  		font-family: 'Yeon Sung'; 
+}
+.text{
+	font-family: 'Lobster', ;
+
+}
+</style>
+<h1 class="text"><b>Our Success Stories!</b></h1>
+<body class="content">
+	{% for objects in obj %}
+	<ul>
+		<li><a  class="w3-xxxlarge" href="{{ objects.get_absolute_url }}" > {{ objects.title }}</a></li>
+	</ul>
+	{% endfor %}
+
+</body>
+</html>

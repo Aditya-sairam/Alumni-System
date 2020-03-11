@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 150%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 150%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+p.ex1{
+  margin-left: 500px;
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 0px;
+}
+
+/* Clearfix (clear floats) */
+.row {
+  content: "";
+  clear: both;
+  /*display: table;*/
+}
+</style>
+</head>
+<body>
+<h3>Welcome to Alumini Connect!</h3>
+<div class="row">
+  <div class="column">
+<div class="container">
+  <img src="https://www.netclipart.com/pp/m/253-2534282_miles-tax-animated-college-student-png.png" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text"><a>Login as Student!</a></div>
+  </div>
+</div>
+</div>
+<div class="column">
+<div class="container">
+  <img src="https://www.pr-inside.com/images/uploads/pr/2016/79825/20190225_alumni-management-software_79825.jpg" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text"><a  href="{% url 'login' %}">Login as Alumni!</a></div>
+  </div>
+</div>
+</div>
+</div>
+</body>
+</html>
