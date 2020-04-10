@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List of Projects</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style>
+		.list{
+			border-color: "black";
+			border-width: 10px;
+		}
+		.center{
+			align-self: center;
+		}
+	</style>
+</head>
+
+<body>
+	<h2><center>List Of Projects!</center></h2>
+	{% for objects in obj %}
+	<ul class="center">
+		<div class="card">
+		<div class = "card-header">
+		<h3>{{ objects.Title }}</h3>
+	</div>
+	<div class="card-body">
+		<p class="card-text">{{ objects.Abstract }}</p>
+		<p class="card-text">{{ objects.liked.count }}<a href="{{ objects.get_like_url }}">Like</a></p>
+		<a href="{{ objects.get_absolute_url }}" class="btn btn-primary">See more!</a>
+	</div>
+	</div>
+	</ul>
+	{% endfor %}
+
+</body>
+</html>

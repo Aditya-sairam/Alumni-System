@@ -36,11 +36,14 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'crispy_forms',
     'django.contrib.staticfiles',
     'posts.apps.PostsConfig',
     'teach.apps.TeachConfig',
     'users.apps.UsersConfig',
-    'projects.apps.ProjectsConfig'
+    'projects.apps.ProjectsConfig',
+    'ticket_booking.apps.TicketBookingConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -124,12 +127,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/list/'
 
-LOCAL_STATIC_CDN_PATH = os.path.join(os.path.dirname(BASE_DIR),'static_cdn_test')
-STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH,'static')
+#LOCAL_STATIC_CDN_PATH = os.path.join(os.path.dirname(BASE_DIR),'static_cdn_test')
+#STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH,'static')
 
-MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH,'mdeia')
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+MEDIA_URL = "/media/"
 
-DEIA_URL = "/media/"
+#DEIA_URL = "/media/"
 STATICFILES_DIRS = [
         os.path.join(BASE_DIR,'staticfiles')]
-

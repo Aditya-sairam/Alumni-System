@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Krona+One&display=swap" rel="stylesheet">
+
+	<title>Details</title>
+	<style>
+		.content {
+  		max-width: 700px;
+
+  		margin: auto;
+  		background: white;
+  		padding: 30px;
+  		background-image: url("https://i.pinimg.com/originals/73/9e/96/739e96f0224947668029d10ee4fa07ae.jpg");
+  		font-family: 'Yeon Sung';
+}
+  		.back{
+  			background-image: url("https://wallpapercave.com/wp/DM0NaOX.jpg")
+  		}
+  		.text{
+  			font-family: 'Krona One', ;
+
+
+  		}
+</style>
+</head>
+<body class="back">
+	<div class="content">
+		<h1>{{ obj.Title }}</h1>
+		<span id="inc">{{ obj.Likes }}</span>
+		<span id="in">{{ obj.Person_Likes}}</span>
+
+		<h2>Abstract of the project!</h2>
+		<p> {{ obj.Abstract }}</p>
+
+		<h2>Implementation!</h2>
+		<p> {{ obj.Implementation }}</p>
+
+		<h2>Tech Stack!</h2>
+		<p>{{ obj.Technology_Stack }}</p>
+
+		<h2>Screenshots of working!</h2>
+		<a href= "{{ obj.Working_ScreenShots.url }}"><img class="card-img-top" src="{{ obj.Working_ScreenShots.url }}" alt="Card image cap" height="25%" width="25%"></a>
+		<form method="POST" action=''>{% csrf_token %}
+			<button class="btn btn-success">Reduce!</button>
+		</form>
+		<script>
+			function myfunc(){
+				var foo = document.getElementById('inc').innerHTML;
+				foo++;
+				document.getElementById('inc').innerHTML = foo;
+
+				var finfoo = document.getElementById('in').innerHTML;
+				finfoo++;
+				document.getElementById('in').innerHTML = finfoo;
+				if(document.getElementById('in').innerHTML >=1){
+					document.getElementById('in').innerHTML = 1;
+				}
+			}
+			</script>
