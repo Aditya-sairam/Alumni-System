@@ -5,3 +5,6 @@ An Alumni System WHere all the present students will be able to post their proje
 Tech Stack : Backend-Python(Django Framework)
              Frontend - HTML,CSS
              Database - Sqlite3
+
+
+![alumni](https://user-images.githubusercontent.com/37501823/80781755-342b6780-8b91-11ea-9fb8-d86dc95e6ea2.png)
